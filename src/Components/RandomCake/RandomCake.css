@@ -1,0 +1,38 @@
+
+.random-cake-container {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .random-cake-title {
+    color: #333;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .random-cake-button {
+    border-radius: 1rem;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+  }
+  
+  .random-cake-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .random-cake-details {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+  }
+  
