@@ -8,7 +8,7 @@ const RandomCake = () => {
 
   const handleSurpriseMe = async () => {
     try {
-      const response = await fetch('<link-to-backend>');
+      const response = await fetch('<Link to backend handler>') // Change this line so it works
       const data = await response.json();
 
       if (response.ok) {
