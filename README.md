@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cake Shuffler
 
-## Getting Started
+## Description
 
-First, run the development server:
+This is a simple and fun project I made for a friend that bakes cakes. She's a bit undecided for the flavors she will bake for the day, so I made this app to help her and test my fullstack coding skills.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This is the frontend for the app, uses React (Nextjs) and TypeScript and consists in a form to add new cake flavors to a database and a button to get a random cake flavor to bake.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The backend for this app is in this repo: [Cake Shuffler Backend](https://github.com/vicovaporub/cake-shuffler-backend)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Table of Contents
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/vicovaporub/cake-shuffler-frontend.git
+   cd cake-shuffler-frontend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Install dependencies:
+    ```bash
+    npm install 
 
-## Deploy on Vercel
+3. Start the app:
+    ```bash
+    npm run dev
+    (Open the browser and access the application at `http://localhost:3000`)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**NOTE:** Don't forget that this app need its backend here: [Cake Shuffler Backend](https://github.com/vicovaporub/cake-shuffler-backend) to work properly.
+
+## Usage
+- To add a new cake to the database just fill the form with batter flavor, filling flavor and icing flavor then submit it.
+- To get a random cake just click the shuffle button, the app will search the database and display a new cake.
+
+## Features
+- Simple form to add a cake to the database.
+- Button that displays a random cake.
