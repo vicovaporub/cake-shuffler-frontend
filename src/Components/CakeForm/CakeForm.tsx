@@ -19,61 +19,69 @@ const CakeForm = () => {
     e.preventDefault();
 
     fetchSubmitCakeForm(formData);
+    setFormData({
+      cakeName: "",
+      batterFlavor: "",
+      fillingFlavor: "",
+      icingFlavor: "",
+    });
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
-      <h1>Adicione um bolo na base de dados:</h1>
-      <label className="form-label">
-        Nome do Bolo:
-        <input
-          required
-          className="form-input"
-          name="cakeName"
-          type="text"
-          onChange={handleChange}
-          value={formData.cakeName}
-        />
-      </label>
-      <label className="form-label">
-        Sabor da Massa:
-        <input
-          required
-          className="form-input"
-          name="batterFlavor"
-          type="text"
-          onChange={handleChange}
-          value={formData.batterFlavor}
-        />
-      </label>
-      <label className="form-label">
-        Sabor do Recheio:
-        <input
-          required
-          className="form-input"
-          name="fillingFlavor"
-          type="text"
-          onChange={handleChange}
-          value={formData.fillingFlavor}
-        />
-      </label>
-      <label className="form-label">
-        Sabor da Cobertura:
-        <input
-          required
-          className="form-input"
-          name="icingFlavor"
-          type="text"
-          value={formData.icingFlavor}
-          onChange={handleChange}
-        />
-      </label>
-      <div className="button-container">
-        <button className="form-button" type="submit">
-          Adicionar
-        </button>
-      </div>
-    </form>
+    <div className="form-container">
+      <form className="cake-form" onSubmit={handleSubmit}>
+        <h1>Adicione um bolo na base de dados:</h1>
+        <label className="form-label">
+          Nome do Bolo:
+          <input
+            required
+            className="form-input"
+            name="cakeName"
+            type="text"
+            onChange={handleChange}
+            value={formData.cakeName}
+          />
+        </label>
+        <label className="form-label">
+          Sabor da Massa:
+          <input
+            required
+            className="form-input"
+            name="batterFlavor"
+            type="text"
+            onChange={handleChange}
+            value={formData.batterFlavor}
+          />
+        </label>
+        <label className="form-label">
+          Sabor do Recheio:
+          <input
+            required
+            className="form-input"
+            name="fillingFlavor"
+            type="text"
+            onChange={handleChange}
+            value={formData.fillingFlavor}
+          />
+        </label>
+        <label className="form-label">
+          Sabor da Cobertura:
+          <input
+            required
+            className="form-input"
+            name="icingFlavor"
+            type="text"
+            value={formData.icingFlavor}
+            onChange={handleChange}
+          />
+        </label>
+        <div className="button-container">
+          <button className="form-button" type="submit">
+            Adicionar
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
