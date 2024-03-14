@@ -1,5 +1,5 @@
 interface Cake {
-  _id: string;
+  _id?: string;
   cakeName: string;
   batterFlavor: string;
   fillingFlavor: string;
