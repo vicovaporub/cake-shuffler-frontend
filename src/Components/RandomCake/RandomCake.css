@@ -27,12 +27,36 @@
   .random-cake-button:hover {
     background-color: #0056b3;
   }
-  
+
   .random-cake-details {
-    display: block;
-    justify-content: center;
-    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
     margin-top: 20px;
-    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
+  .random-cake-announcer {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  
+  .random-cake-details .random-cake-name,
+  .random-cake-details .random-cake-batter,
+  .random-cake-details .random-cake-filling,
+  .random-cake-details .random-cake-icing {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+    text-transform: capitalize;
+  }
+  
+  .random-cake-details strong {
+    font-weight: bold;
+    color: #333;
+  }

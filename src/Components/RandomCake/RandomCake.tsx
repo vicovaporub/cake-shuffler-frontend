@@ -20,17 +20,17 @@ const RandomCake = () => {
       </div>
       {randomCake && (
         <div className="random-cake-details">
-          <h3>Seu bolo aleatório é:</h3>
-          <p>
+          <p className="random-cake-announcer">O bolo escolhido foi:</p>
+          <p className="random-cake-name">
             Nome: <strong>{randomCake.cakeName}</strong>
           </p>
-          <p>
+          <p className="random-cake-batter">
             Massa: <strong>{randomCake.batterFlavor}</strong>
           </p>
-          <p>
+          <p className="random-cake-filling">
             Recheio: <strong>{randomCake.fillingFlavor}</strong>
           </p>
-          <p>
+          <p className="random-cake-icing">
             Cobertura: <strong>{randomCake.icingFlavor}</strong>
           </p>
         </div>
