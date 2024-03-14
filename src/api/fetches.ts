@@ -1,3 +1,5 @@
+import Cake from "@/Types/Cake";
+
 export const fetchAllCakes = async (setCakes: Function) => {
   try {
     if (
@@ -22,8 +24,16 @@ export const fetchAllCakes = async (setCakes: Function) => {
   }
 };
 
-export const fetchSubmitCakeForm = async (formData: object) => {
+export const fetchSubmitCakeForm = async (formData: Cake) => {
   try {
+    const formDataLowerCase = {
+      ...formData,
+      cakeName: formData.cakeName.toLowerCase(),
+      batterFlavor: formData.batterFlavor.toLowerCase(),
+      fillingFlavor: formData.fillingFlavor.toLowerCase(),
+      icingFlavor: formData.icingFlavor.toLowerCase(),
+    };
+
     if (
       !process.env.NEXT_PUBLIC_API_URL ||
       !process.env.NEXT_PUBLIC_SUBMIT_CAKES
@@ -40,13 +50,23 @@ export const fetchSubmitCakeForm = async (formData: object) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(`here is the data: ${data}`);
-      })
-      .catch((err) => console.error(`there is an error: ${err}`));
+      body: JSON.stringify(formDataLowerCase),
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      if (data.message === "Cake name already taken") {
+        alert(`ERRO: Já existe um bolo com este nome!`);
+      } else {
+        alert(`Houve um erro ao enviar o bolo!`);
+      }
+    } else {
+      alert(`Bolo enviado com sucesso!
+       Nome: ${formDataLowerCase.cakeName}
+       Cobertura: ${formDataLowerCase.icingFlavor}
+       Massa: ${formDataLowerCase.batterFlavor}
+       Recheio: ${formDataLowerCase.fillingFlavor}`);
+    }
+    return data;
   } catch (error) {
     console.error(`there is an error: ${error}`);
   }
