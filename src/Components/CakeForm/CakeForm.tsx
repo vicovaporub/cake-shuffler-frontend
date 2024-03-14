@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "@/Components/CakeForm/CakeForm.css";
-import { fetchSubmitCakeForm } from "@/pages/api/fetches";
+import { fetchSubmitCakeForm } from "@/api/fetches";
 
 const CakeForm = () => {
   const [formData, setFormData] = useState({

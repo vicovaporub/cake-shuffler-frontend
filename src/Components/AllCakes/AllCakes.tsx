@@ -1,8 +1,8 @@
 "use client";
 import Cake from "@/Types/Cake";
-import { fetchAllCakes } from "@/pages/api/fetches";
 import { useState } from "react";
 import "@/Components/AllCakes/AllCakes.css";
+import { fetchAllCakes } from "@/api/fetches";
 
 export const AllCakes = () => {
   const [cakes, setCakes] = useState<Cake[]>([]);

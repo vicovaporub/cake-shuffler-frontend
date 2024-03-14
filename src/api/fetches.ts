@@ -1,18 +1,12 @@
 import Cake from "@/Types/Cake";
 
+const serverUrl = process.env.NEXT_PUBLIC_API_URL;
 export const fetchAllCakes = async (setCakes: Function) => {
   try {
-    if (
-      !process.env.NEXT_PUBLIC_API_URL ||
-      !process.env.NEXT_PUBLIC_ALL_CAKES
-    ) {
-      throw new Error(
-        "Environment variables NEXT_PUBLIC_API_URL or NEXT_PUBLIC_ALL_CAKES are not defined"
-      );
-    }
-    const allTheCakesUrl =
-      process.env.NEXT_PUBLIC_API_URL + process.env.NEXT_PUBLIC_ALL_CAKES;
-    const response = await fetch(allTheCakesUrl);
+    const allCakesPath = process.env.NEXT_PUBLIC_ALL_CAKES;
+
+    const allCakesUrl = `${serverUrl}${allCakesPath}`;
+    const response = await fetch(allCakesUrl);
     const data = await response.json();
     if (!response.ok) {
       alert(`Ainda não há bolos cadastrados!`);
@@ -34,17 +28,8 @@ export const fetchSubmitCakeForm = async (formData: Cake) => {
       icingFlavor: formData.icingFlavor.toLowerCase(),
     };
 
-    if (
-      !process.env.NEXT_PUBLIC_API_URL ||
-      !process.env.NEXT_PUBLIC_SUBMIT_CAKES
-    ) {
-      throw new Error(
-        "Environment variables NEXT_PUBLIC_API_URL or NEXT_PUBLIC_SUBMIT_CAKES are not defined"
-      );
-    }
-
-    const submitCakeUrl =
-      process.env.NEXT_PUBLIC_API_URL + process.env.NEXT_PUBLIC_SUBMIT_CAKES;
+    const submitCakePath = process.env.NEXT_PUBLIC_SUBMIT_CAKES;
+    const submitCakeUrl = `${serverUrl}${submitCakePath}`;
     const response = await fetch(submitCakeUrl, {
       method: "POST",
       headers: {
@@ -74,16 +59,8 @@ export const fetchSubmitCakeForm = async (formData: Cake) => {
 
 export const fetchRandomCake = async (setRandomCake: Function) => {
   try {
-    if (
-      !process.env.NEXT_PUBLIC_API_URL ||
-      !process.env.NEXT_PUBLIC_RANDOM_CAKE
-    ) {
-      throw new Error(
-        "Environment variables NEXT_PUBLIC_API_URL or NEXT_PUBLIC_RANDOM_CAKE are not defined"
-      );
-    }
-    const randomCakeUrl =
-      process.env.NEXT_PUBLIC_API_URL + process.env.NEXT_PUBLIC_RANDOM_CAKE;
+    const randomCakePath = process.env.NEXT_PUBLIC_RANDOM_CAKE;
+    const randomCakeUrl = `${serverUrl}${randomCakePath}`;
     const response = await fetch(randomCakeUrl);
     const data = await response.json();
     if (!response.ok) {
