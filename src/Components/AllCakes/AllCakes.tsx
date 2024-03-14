@@ -1,6 +1,6 @@
 "use client";
 import Cake from "@/Types/Cake";
-import { fetchAllCakes } from "@/api/fetches";
+import { fetchAllCakes } from "@/pages/api/fetches";
 import { useState } from "react";
 import "@/Components/AllCakes/AllCakes.css";
 

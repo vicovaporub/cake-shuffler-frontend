@@ -2,7 +2,7 @@
 import Cake from "@/Types/Cake";
 import React, { useState } from "react";
 import "@/Components/RandomCake/RandomCake.css";
-import { fetchRandomCake } from "@/api/fetches";
+import { fetchRandomCake } from "@/pages/api/fetches";
 
 const RandomCake = () => {
   const [randomCake, setRandomCake] = useState<Cake | null>(null);
